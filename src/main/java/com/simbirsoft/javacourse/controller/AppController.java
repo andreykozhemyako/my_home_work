@@ -21,9 +21,9 @@ public class AppController {
 
 
     @GetMapping("/view_resume")
-    public String viewResumeById(Model model){//, @RequestParam(value = "pass", required = false) Long id){
+    public String viewResumeById(Model model,@RequestParam(value = "id", required = false) Long id){
 
-        long id = 1;
+        //long id = 1;
 
         List <PersonalData> list = service.getPersonById(id);
 
