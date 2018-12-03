@@ -28,7 +28,7 @@ public class PersonalData implements Serializable {
     private String additionalEducations;    //дополнительное образование
     private String skills;                  //скилы
 
-    private Map <String, Integer> skillsMap = new LinkedHashMap <>();
+    private LinkedHashMap <String, Integer> skillsMap = new LinkedHashMap <>();
     public ArrayList <String> expList;
 
     public PersonalData() {
@@ -72,7 +72,7 @@ public class PersonalData implements Serializable {
                 String[] elements = strings[i].split(":");
                 skillsMap.put(elements[0], Integer.parseInt(elements[1]));
             }
-            skillsMap = sortByValue(skillsMap);
+            skillsMap = (LinkedHashMap <String, Integer>) sortByValue(skillsMap);
 
             //System.out.println(MaxPosition(propvals));
             //System.out.println("TreeMap generated::" + propvals);
