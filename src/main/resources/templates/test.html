@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ввод нового</title>
+</head>
+<body>
+
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>FIO</td>
+            <td>DOB</td>
+            <td>PHONE</td>
+            <td>EMAIL</td>
+            <td>SKYPE</td>
+            <td>AVATAR</td>
+            <td>TARGET</td>
+            <td>EXPERIENCES</td>
+            <td>EDUCATIONS</td>
+            <td>ADDITIONAL_EDUCATIONS</td>
+            <td>SKILL</td>
+        </tr>
+        <tbody th:each="person : ${Persons}">
+        <tr>
+            <td th:text="${person.getId()}">...</td>
+            <td th:text="${person.getFIO()}">...</td>
+            <td th:text="${person.getDOB()}">...</td>
+            <td th:text="${person.getPhone()}">...</td>
+            <td th:text="${person.getEmail()}">...</td>
+            <td th:text="${person.getSkype()}">...</td>
+            <td th:text="${person.getAvatar()}">...</td>
+            <td th:text="${person.getTarget()}">...</td>
+            <td th:text="${person.getExpList()}">...</td>
+            <td th:text="${person.getEducations()}">...</td>
+            <td th:text="${person.getAdditionalEducations()}">...</td>
+            <td th:text="${person.getSkills()}">...</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

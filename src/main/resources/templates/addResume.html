@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>addResume</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/savePerson}" th:object="${Person}" method="post">
+
+            <label>FIO</label>
+            <input th:field="*{FIO}" type="text" placeholder="FIO"/>
+
+            <br/>
+
+            <label>DOB</label>
+            <input th:field="*{DOB}" type="text" placeholder="DOB"/>
+
+            <br/>
+
+            <label>PHONE</label>
+            <input th:field="*{phone}" type="text" placeholder="phone"/>
+
+            <br/>
+
+            <label>EMAIL</label>
+            <input th:field="*{email}" type="text" placeholder="email"/>
+
+            <br/>
+
+            <label>SKYPE</label>
+            <input th:field="*{skype}" type="text" placeholder="skype"/>
+
+            <br/>
+
+            <label>AVATAR</label>
+            <input th:field="*{avatar}" type="text" placeholder="avatar"/>
+
+            <br/>
+
+            <label>TARGET</label>
+            <input th:field="*{target}" type="text" placeholder="target"/>
+
+            <br/>
+
+            <label>EXPERIENCES</label>
+            <input th:field="*{experiences}" type="text" placeholder="experiences"/>
+
+            <br/>
+
+            <label>EDUCATIONS</label>
+            <input th:field="*{educations}" type="text" placeholder="educations"/>
+
+            <br/>
+
+            <label>ADDITINALEDUCATIONS</label>
+            <input th:field="*{additionalEducations}" type="text" placeholder="additionalEducations"/>
+
+            <br/>
+
+            <label>SKILLS</label>
+            <input th:field="*{skills}" type="text" placeholder="skills"/>
+
+            <br/>
+
+
+
+        <button type="submit">Создать</button>
+
+</form>
+</body>
+</html>

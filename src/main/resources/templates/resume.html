@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Резюме</title>
+    <style type="text/css">
+        .main{margin-top: 50px;}
+        .avatar{display:inline-block;width: 20%;height: 250px;margin-left: 10px; margin-right: 10px;}
+        .about{padding-left: 10px;margin-left: 10%; float: left;background-color: #bba;width: 50%;height: 250px;overflow: auto;}
+    </style>
+</head>
+<body>
+<h2 align="center">РЕЗЮМЕ <br/> на должность Java-стажёр</h2>
+
+
+<div class="main">
+    <div class="about">
+        <p th:text="' FIO = ' + ${Person.getFIO()}"></p>
+        <p th:text="' DOB = ' + ${Person.getDOB()}"></p>
+        <p th:text="' Phone = ' + ${Person.getPhone()}"></p>
+        <p th:text="' E-mail = ' + ${Person.getEmail()}"></p>
+    </div>
+    <img src="https://sun7-1.userapi.com/D4paWqVSkku4lAs-Y7WDiuL0CQHAKay3iVAT-w/FFlBFz7TKrY.jpg" alt="Недоступно" class="avatar"/>
+</div>
+<br/>
+<div class="target">
+    <h2>Цель:</h2>
+    <p th:text="${Person.getTarget()}"></p>
+</div>
+<div class="experience">
+    <h2>Опыт:</h2>
+    <ol>
+        <th:block  th:each="exp : ${Person.getExpList()}">
+            <li><span th:text="${exp}"> </span></li>
+        </th:block>
+    </ol>
+</div>
+<div class="education">
+    <h2>Образование:</h2>
+    <p th:text="${Person.getEducations()}"></p>
+</div>
+<div class="additionalEducations">
+    <h2>Доп.образование и курсы:</h2>
+    <p th:text="${Person.getAdditionalEducations()}"></p>
+</div>
+<div class="skills"> <h2>Навыки</h2>
+
+    <ol>
+        <th:block  th:each="skill : ${Person.getSkillsMap()}">
+            <li><span th:text="${skill}"> </span></li>
+        </th:block>
+    </ol>
+
+</div>
+
+
+</body>
+</html>
